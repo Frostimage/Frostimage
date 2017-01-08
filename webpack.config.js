@@ -19,6 +19,22 @@ const config = {
         test: /\.js$/,
         loaders: ['babel'],
         include: path.join(__dirname, 'client')
+      },
+      {
+        // CSS
+        test: /\.css?$/,
+        include: path.join(__dirname, 'client'),
+        loaders:['css']
+      },
+      {
+        // Images
+        test: /\.(jpg|png)$/,
+        loader: 'url-loader?name=assets/[name].[ext]'
+      },
+      {
+        // Videos
+        test: /\.mp4$/,
+        loader: 'url-loader?limit=100000'
       }
     ]
   }
